@@ -5,23 +5,25 @@ function toggleMenu() {
 
 // Calcular domínio público
 function calcularDominio() {
+  const nomeObra = document.getElementById('nomeObraDominio').value.trim();
   const anoMorte = parseInt(document.getElementById('anoMorte').value);
   const autor = document.getElementById('nomeAutor').value.trim();
   const resultado = document.getElementById('resultadoDominio');
 
   if (!autor || isNaN(anoMorte)) {
-    resultado.textContent = 'Por favor, preencha todos os campos corretamente.';
+    resultado.textContent = 'Por favor, preencha pelo menos o nome do autor e o ano da morte corretamente.';
     return;
   }
 
   const anoAtual = new Date().getFullYear();
   const dominioAno = anoMorte + 70;
 
-  if (anoAtual >= dominioAno) {
-    resultado.textContent = `A obra de ${autor} já está em domínio público (desde ${dominioAno}).`;
-  } else {
-    resultado.textContent = `A obra de ${autor} entrará em domínio público em ${dominioAno}.`;
-  }
+  const obraInfo = nomeObra ? ` a obra "${nomeObra}" de` : '';
+  const mensagem = anoAtual >= dominioAno
+    ? `Sim,${obraInfo} ${autor} está em domínio público desde ${dominioAno}.`
+    : `Não,${obraInfo} ${autor} entrará em domínio público em ${dominioAno}.`;
+
+  resultado.textContent = mensagem;
 }
 
 // Consulta a API da Wikipedia
