@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Obra Tools</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <h1>Obra Tools</h1>
+    <nav id="menu">
+      <button onclick="toggleMenu()" class="menu-button">☰</button>
+      <ul class="menu-items">
+        <li><a href="#dominio">Domínio Público</a></li>
+        <li><a href="#existe">Obra Existe?</a></li>
+        <li><a href="#personagem">Personagem Existe?</a></li>
+        <li><a href="#entrou">Entraram em Domínio</a></li>
+        <li><a href="#entrara">Entrarão em Domínio</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="dominio">
+      <h2>Calcular o Domínio Público</h2>
+      <input type="text" id="nomeAutor" placeholder="Nome do autor">
+      <input type="number" id="anoMorte" placeholder="Ano da morte">
+      <button onclick="calcularDominio()">Verificar</button>
+      <p id="resultadoDominio"></p>
+    </section>
+
+    <section id="existe">
+      <h2>Será que a Obra Existe?</h2>
+      <input type="text" id="nomeObra" placeholder="Nome da obra">
+      <button onclick="verificarObra()">Verificar</button>
+      <p id="resultadoObra"></p>
+    </section>
+
+    <section id="personagem">
+      <h2>O Personagem Já Existe?</h2>
+      <input type="text" id="nomePersonagem" placeholder="Nome do personagem">
+      <button onclick="verificarPersonagem()">Verificar</button>
+      <p id="resultadoPersonagem"></p>
+    </section>
+
+    <section id="entrou">
+      <h2>Obras que Já Entraram em Domínio Público</h2>
+      <ul id="listaEntraram"></ul>
+    </section>
+
+    <section id="entrara">
+      <h2>Obras que Entrarão em Domínio Público</h2>
+      <ul id="listaEntrara"></ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Obra Tools - Desenvolvido por você</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
