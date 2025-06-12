@@ -111,4 +111,10 @@ footer {
   main {
     padding: 1rem;
   }
+  .menu-items {
+  display: none;
+}
+
+.menu-items.show {
+  display: block;
 }
