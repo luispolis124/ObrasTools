@@ -5,13 +5,13 @@ function toggleMenu() {
 
 // Calcular domínio público
 function calcularDominio() {
-  const nomeObra = document.getElementById('nomeObraDominio').value.trim();
+  const nomeObra = document.getElementById('nomeObra').value.trim(); // corrigido ID
   const anoMorte = parseInt(document.getElementById('anoMorte').value);
   const autor = document.getElementById('nomeAutor').value.trim();
   const resultado = document.getElementById('resultadoDominio');
 
   if (!autor || isNaN(anoMorte)) {
-    resultado.textContent = 'Por favor, preencha pelo menos o nome do autor e o ano da morte corretamente.';
+    resultado.textContent = 'Por favor, preencha corretamente o nome do autor e o ano da morte.';
     return;
   }
 
@@ -77,10 +77,11 @@ async function verificarPersonagem() {
   }
 }
 
-// Listas de obras em domínio público
+// Lista de obras
 const obrasEntraram = ["Ursinho Pooh (1926)", "Metropolis (1927)", "Drácula (1897)"];
 const obrasEntrarao = ["Pluto (2026)", "Betty Boop (2026)", "Mickey Fantasia (2027)"];
 
+// Preenche listas ao carregar
 window.onload = () => {
   const listaEntraram = document.getElementById('listaEntraram');
   const listaEntrara = document.getElementById('listaEntrara');
